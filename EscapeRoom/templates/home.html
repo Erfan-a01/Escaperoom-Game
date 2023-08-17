@@ -7,6 +7,7 @@
     <p>{{ request.user.email }}</p>
     <p>{{ request.user.first_name }}</p>
     <br/>
+    <br/>
     <a href="{% url 'user_login' %}" class="btn btn-info">Login</a>
     <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
     <a href="{% url 'user_register' %}" class="btn btn-secondary">Register</a>
