@@ -11,4 +11,4 @@ class UserRegistrationForm(forms.Form):
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
-    password = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput(render_value=False))

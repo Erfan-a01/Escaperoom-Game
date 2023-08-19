@@ -31,7 +31,7 @@ def user_login(request):
             user = authenticate(request, username=cd['username'], password=cd['password'])
             if user is not None:
                 login(request, user)
-                messages.success(request, 'Loged in successfully', 'success')
+                messages.success(request, 'Logged in successfully', 'success')
                 return redirect('home_page')
             else:
                 messages.error(request, 'Username or Password is wrong!!', extra_tags='danger')

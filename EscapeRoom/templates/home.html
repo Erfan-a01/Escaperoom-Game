@@ -9,9 +9,6 @@
     <br/>
     <br/>
     <br/>
-    <a href="{% url 'user_login' %}" class="btn btn-info">Login</a>
-    <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
-    <a href="{% url 'user_register' %}" class="btn btn-secondary">Register</a>
     {% if request.user.is_authenticated %}
         <h2> You are logged in now!</h2>
     {% else %}
