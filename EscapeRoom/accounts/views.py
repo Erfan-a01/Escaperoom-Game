@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
+
 def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
