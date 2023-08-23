@@ -43,9 +43,9 @@ def after_login_view(request):
     if is_owner(request.user):
         approved_by_admin = OMODEL.Admin.objects.all().filter(user_id=request.user.id, situation=True)
         if approved_by_admin is not None:
-            return redirect('admin/admin_dashboard')
+            return redirect('owner/admin_dashboard')
         else:
-            return render(request, 'admin/admin_not_approval.html')
+            return render(request, 'admin/owner_not_approval.html')
     else:
         return redirect('admin-dashboard')
 
