@@ -18,9 +18,6 @@ from django.contrib.auth.models import User
 from game import forms
 
 
-# Create your views here.
-
-
 def home_view(request):
     if request.user.is_authenticated:
         return redirect('after-login')
