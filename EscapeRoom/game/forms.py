@@ -15,7 +15,7 @@ class ContactusForm(forms.Form):
 class RoomForm(forms.ModelForm):
     class Meta:
         model = models.Room
-        fields = ['room_name', 'question_number', 'total_marks']
+        fields = ['title', 'question_num', 'total_score']
 
 
 class QuestionForm(forms.ModelForm):
@@ -24,7 +24,7 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model = models.Question
-        fields = ['marks', 'question', 'answer']
+        fields = ['text', 'score', 'answer']
         widgets = {
             'question': forms.Textarea(attrs={'rows': 3, 'cols': 50})
         }

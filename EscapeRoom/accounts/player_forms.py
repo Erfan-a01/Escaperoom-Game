@@ -16,3 +16,6 @@ class PLayerForm(forms.ModelForm):
     class Meta:
         model = player_models.Player
         fields = ['address', 'mobile']
+
+
+

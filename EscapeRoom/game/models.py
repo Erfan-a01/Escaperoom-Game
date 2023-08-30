@@ -22,7 +22,7 @@ class Question(models.Model):
 
 class Result(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    game = models.ForeignKey(Room, on_delete=models.CASCADE)
-    marks = models.PositiveIntegerField()
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    score = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now=True)
 

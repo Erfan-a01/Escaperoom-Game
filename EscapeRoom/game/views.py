@@ -14,7 +14,6 @@ from accounts import owner_forms as OFORM
 from accounts import player_forms as PFORM
 from django.contrib.auth.models import User
 
-
 from game import forms
 
 

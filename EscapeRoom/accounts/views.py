@@ -49,3 +49,19 @@ def user_logout(request):
 
 def home_page(request):
     return render(request, 'home.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
