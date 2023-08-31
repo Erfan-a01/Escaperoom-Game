@@ -24,11 +24,11 @@ def playerclick_view(request):
 
 def player_signup_view(request):
     userForm = player_forms.PlayerUserForm()
-    playerForm = player_forms.PLayerForm()
+    playerForm = player_forms.PlayerForm()
     localDict = {'userForm': userForm, 'playerForm': playerForm}
     if request.method == 'POST':
         userForm = player_forms.PlayerUserForm(request.POST)
-        playerForm = player_forms.PLayerForm(request.POST)
+        playerForm = player_forms.PlayerForm(request.POST)
         if userForm.is_valid() and playerForm.is_valid():
             user = userForm.save()
             user.set_password(user.password)
@@ -97,7 +97,7 @@ def calculate_score_view(request):
         questions = GMODEL.Question.objects.filter(room=room)
         for i in range(questions_num):
             # WARNING: IT MAY CAUSE BUGS:
-            entered_ans = request.COOKIES.get(str(i))
+            entered_ans = request.COOKIES.get(str(i+1))
             right_answer = questions[i].answer
             if entered_ans == right_answer:
                 total_score += questions[i].score

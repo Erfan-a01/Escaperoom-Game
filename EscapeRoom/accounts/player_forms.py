@@ -12,10 +12,7 @@ class PlayerUserForm(forms.ModelForm):
         }
 
 
-class PLayerForm(forms.ModelForm):
+class PlayerForm(forms.ModelForm):
     class Meta:
         model = player_models.Player
         fields = ['address', 'mobile']
-
-
-

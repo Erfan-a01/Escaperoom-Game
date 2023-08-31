@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, reverse
 from . import owner_models, owner_forms
 from django.db.models import Sum
@@ -69,12 +70,13 @@ def owner_add_game_view(request):
     questionForm = GFORM.QuestionForm()
     if request.method == 'POST':
         questionForm = GFORM.QuestionForm(request.POST)
-        if questionForm.is_valid():
+        try:
+            questionForm.is_valid()
             question = questionForm.save(commit=False)
             room = GMODEL.Room.objects.get(id=request.POST.get('roomId'))
             question.room = room
             question.save()
-        else:
+        except (ValidationError):
             print("form is invalid")
         return redirect('/owner/owner-view-question')
     return render(request=request, template_name='owner/owner_add_question', context={'questionForm': questionForm})

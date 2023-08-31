@@ -27,7 +27,7 @@ urlpatterns = [
     # **************************** account paths ***********************************************
     path('', views.home_view, name=''),
     path('logout/', LogoutView.as_view(template_name='player/logout.html'), name='logout'),
-    path('contactus', views.contact_us_view),
+    path('contactus', views.contactus_view),
     path('afterlogin', views.after_login_view, name='afterlogin'),
     # ***************************** admin-owner paths ****************************************************
     path('adminclick', views.adminclick_view),
@@ -39,14 +39,14 @@ urlpatterns = [
     path('delete-owner/<int:pk>', views.delete_owner_view, name='delete-owner'),
     path('admin-view-pending-owner', views.admin_view_pending_owner_view, name='owner-view-pending-owner'),
     # path('owner-view-owner-salary', views.admin_view_teacher_salary_view, name='owner-view-owner-salary'),
-    path('approve-owner/<int:pk>', views.approve_owner_view, name='approve-owner'),
+    # path('approve-owner/<int:pk>', views.approve_owner_view, name='approve-owner'),
     path('reject-owner/<int:pk>', views.reject_owner_view, name='reject-owner'),
     # ***************************** admin-player paths ******************************************************
     path('admin-player', views.admin_player_view, name='owner-player'),
     path('admin-view-player', views.admin_view_player_view, name='owner-view-player'),
-    path('admin-view-player-score', views.admin_view_player_score_view, name='owner-view-player-score'),
-    path('admin-view-score/<int:pk>', views.admin_view_score_view, name='owner-view-score'),
-    path('admin-check-score/<int:pk>', views.admin_check_score_view, name='owner-check-score'),
+    path('admin-view-player-score', views.admin_view_player_scores_view, name='owner-view-player-score'),
+    path('admin-view-score/<int:pk>', views.admin_view_scores_view, name='owner-view-score'),
+    path('admin-check-score/<int:pk>', views.admin_check_scores_view, name='owner-check-score'),
     path('update-player/<int:pk>', views.update_player_view, name='update-player'),
     path('delete-player/<int:pk>', views.delete_player_view, name='delete-player'),
     # ****************************** admin-room paths ****************************************************
