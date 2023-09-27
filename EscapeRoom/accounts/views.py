@@ -16,6 +16,7 @@ def user_register(request):
             user = User.objects.create_user(cd['username'], cd['email'], cd['password'])
             user.first_name = cd['first_name']
             user.last_name = cd['last_name']
+            ######
             user.save()
             messages.success(request, 'User registered successfully')
             return redirect('home_page')
