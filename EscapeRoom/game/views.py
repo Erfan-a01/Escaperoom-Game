@@ -229,8 +229,7 @@ def admin_add_question_view(request):
         questionForm = forms.QuestionForm(request.POST)
         if questionForm.is_valid():
             question = questionForm.save(commit=False)
-            room = models.Room.objects.get(id=request.POST.get('roomID'))
-            question.room = room
+            question.room = models.Room.objects.get(id=request.POST.get('roomID'))
             question.save()
         else:
             print("form is invalid")
